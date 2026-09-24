@@ -17,6 +17,17 @@ npm run dev
 
 Open `http://localhost:5173`. The Express API runs on port 4000. For another API instance, run `SERVER_ID=API-2 PORT=4001 npm run server` in a second terminal. On Windows PowerShell: `$env:SERVER_ID='API-2'; $env:PORT='4001'; npm run server`.
 
+## Deploy on Render
+
+The repository includes `render.yaml` for a single Render web service. This service builds the Vite client, then Express serves both the API and the compiled frontend.
+
+1. Push the repository to GitHub.
+2. In Render, choose **New +** -> **Blueprint**.
+3. Select `aagamjain24/seatflow` and apply the blueprint.
+4. Wait for the build to finish, then open the generated `onrender.com` URL.
+
+Render uses `npm install && npm run build` and starts the app with `npm start`. `JWT_SECRET` is generated automatically and `/api/health` is used as the health check. The demo data is in memory, so bookings reset whenever the service restarts.
+
 ## Demo accounts
 
 - User: `user@seatflow.com` / `User@123`
