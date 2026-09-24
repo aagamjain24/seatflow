@@ -41,11 +41,11 @@ The MVP uses in-memory data for zero-setup demos. The booking API validates owne
 
 ### 1. Discovery
 
-The React app loads `GET /api/events` when the home page opens. The API returns eight seeded experiences. Search is sent as a query parameter, and the category controls filter the visible event cards. Selecting a card stores the selected event in the client and opens its detail view.
+The React app loads `GET /api/events` when the home page opens. The API returns fourteen seeded experiences across movies, anime, concerts, sports, comedy, theatre, and events. Search is sent as a query parameter, and the category controls filter the visible event cards, including Anime, Events, and Top Rated. Selecting a card stores the selected event in the client and opens its detail view.
 
 ### 2. Event and show selection
 
-The detail view requests `GET /api/shows/:eventId`. Each show combines an event, venue, date, time, format, and price. The client displays the show choices, but the API remains the source of truth for the show data.
+The detail view requests `GET /api/shows/:eventId`. Each event has three showtimes across September 25-27. Each show combines an event, venue, date, time, format, and price. The client displays the show choices, but the API remains the source of truth for the show data.
 
 ### 3. Authentication
 
